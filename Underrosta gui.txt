@@ -1,0 +1,354 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("UnderRosta HUB", "BloodTheme")
+
+--Player Settings
+local Tab = Window:NewTab("Player")
+local Section = Tab:NewSection("Change WalkSpeed")
+
+
+Section:NewButton("Default Speed", "If press then you got default speed (16)", function()
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+end)
+
+Section:NewSlider("Speed", "Change Speed With SLIDER!", 500, 0, function(s) -- 300 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+local Section = Tab:NewSection("Change JumpPower")
+
+
+Section:NewButton("Default JumpPower", "If press then you got default jumppower (50)", function()
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+end)
+
+Section:NewSlider("Jump", "Change Jumppower With SLIDER!", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+local Section = Tab:NewSection("Others Function")
+
+
+Section:NewButton("Eliminate Yourself", "Just kills you", function()
+    game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end)
+
+Section:NewButton("Big Hitbox", "Makes Players Hitbox BIG", function()
+    _G.HeadSize = 20
+_G.Disabled = true
+
+game:GetService('RunService').RenderStepped:connect(function()
+if _G.Disabled then
+for i,v in next, game:GetService('Players'):GetPlayers() do
+if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+pcall(function()
+v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
+v.Character.HumanoidRootPart.Transparency = 0.7
+v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really blue")
+v.Character.HumanoidRootPart.Material = "Neon"
+v.Character.HumanoidRootPart.CanCollide = false
+end)
+end
+end
+end
+end)
+end)
+
+
+--Script Hub
+local Tab = Window:NewTab("Script Hub")
+local Section = Tab:NewSection("Script Hub")
+
+
+Section:NewButton("Fly Gui", "Flying yay", function()
+    loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\40\39\104\116\116\112\115\58\47\47\103\105\115\116\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\109\101\111\122\111\110\101\89\84\47\98\102\48\51\55\100\102\102\57\102\48\97\55\48\48\49\55\51\48\52\100\100\100\54\55\102\100\99\100\51\55\48\47\114\97\119\47\101\49\52\101\55\52\102\52\50\53\98\48\54\48\100\102\53\50\51\51\52\51\99\102\51\48\98\55\56\55\48\55\52\101\98\51\99\53\100\50\47\97\114\99\101\117\115\37\50\53\50\48\120\37\50\53\50\48\102\108\121\37\50\53\50\48\50\37\50\53\50\48\111\98\102\108\117\99\97\116\111\114\39\41\44\116\114\117\101\41\41\40\41\10\10")()
+end)
+
+Section:NewButton("Infinite Yield", "OMG Popular admin", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+end)
+
+Section:NewButton("Prison Life Septex Admin (KEY SYSTEM)", "Prison Life Admin (NEED KEY!)", function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/XTheMasterX/Scripts/Main/PrisonLife'),true))()
+end)
+
+Section:NewButton("Funky Friday (OP)", "AutoPlayer HOLY SH-", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ShowerHead-FluxTeam/scripts/main/funky-friday-autoplay"))()
+end)
+
+Section:NewButton("(FOR MOBILE) Toggle Funky Friday Gui AutoPlayer", "For Mobile You can toggle gui with this script", function()
+    --FFMT
+--credits to thatsnotmatt#2602
+getgenv().keytoclick = "Delete"
+tool = Instance.new("Tool")
+tool.RequiresHandle = false
+tool.Name = keytoclick
+tool.Activated:connect(function()
+    local vim = game:service("VirtualInputManager")
+vim:SendKeyEvent(true, keytoclick, false, game)
+end)
+tool.Parent = game.Players.LocalPlayer.Backpack
+wait(0.2)
+local AkaliNotif = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/Dynissimo/main/Scripts/AkaliNotif.lua"))();
+local Notify = AkaliNotif.Notify;
+Notify({
+Description = "thatsnotmatt#2602";
+Title = "zzz#0001";
+Duration = 10;
+});
+end)
+
+Section:NewButton("Knife Strife GUI", "Scriot for Knife Strife (TOO OP)", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/9ur98wh8fjkerbngo12ikontgg/fortnite/main/rrfwefwefdwd", true))()
+end)
+
+Section:NewButton("Slap Battles & Slap Royale", "ButtonInfo", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Kitzoon/Rogue-Hub/main/Main.lua", true))()
+end)
+
+Section:NewButton("Keyboard For Mobile", "Keyboard for mobile ._.", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+end)
+
+Section:NewButton("DOORS Vynixius", "Really Cool GUI For DOORS!", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Vynixius/main/Doors/Script.lua"))()
+end)
+
+Section:NewButton("Shiftlock script", "SHIFTLOCK", function()
+    --SHIFT LOCK SCREPT
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ShiftlockStarterGui = Instance.new("ScreenGui")
+local ImageButton = Instance.new("ImageButton")
+
+--Properties:
+
+ShiftlockStarterGui.Name = "Shiftlock (StarterGui)"
+ShiftlockStarterGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ShiftlockStarterGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+ImageButton.Parent = ShiftlockStarterGui
+ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageButton.BackgroundTransparency = 1.000
+ImageButton.Position = UDim2.new(0.921914339, 0, 0.552375436, 0)
+ImageButton.Size = UDim2.new(0.0636147112, 0, 0.0661305636, 0)
+ImageButton.SizeConstraint = Enum.SizeConstraint.RelativeXX
+ImageButton.Image = "http://www.roblox.com/asset/?id=182223762"
+
+-- Scripts:
+
+local function TLQOYN_fake_script() -- ImageButton.ShiftGUI 
+	local script = Instance.new('LocalScript', ImageButton)
+
+	local MobileCameraFramework = {}
+	local players = game:GetService("Players")
+	local runservice = game:GetService("RunService")
+	local CAS = game:GetService("ContextActionService")
+	local player = players.LocalPlayer
+	local character = player.Character or player.CharacterAdded:Wait()
+	local root = character:WaitForChild("HumanoidRootPart")
+	local humanoid = character.Humanoid
+	local camera = workspace.CurrentCamera
+	local button = script.Parent
+	
+	--Visiblity
+	uis = game:GetService("UserInputService")
+	ismobile = uis.TouchEnabled
+	button.Visible = ismobile
+	
+	local states = {
+		OFF = "rbxasset://textures/ui/mouseLock_off@2x.png",
+		ON = "rbxasset://textures/ui/mouseLock_on@2x.png"
+	}
+	local MAX_LENGTH = 900000
+	local active = false
+	local ENABLED_OFFSET = CFrame.new(1.7, 0, 0)
+	local DISABLED_OFFSET = CFrame.new(-1.7, 0, 0)
+	local function UpdateImage(STATE)
+		button.Image = states[STATE]
+	end
+	local function UpdateAutoRotate(BOOL)
+		humanoid.AutoRotate = BOOL
+	end
+	local function GetUpdatedCameraCFrame(ROOT, CAMERA)
+		return CFrame.new(root.Position, Vector3.new(CAMERA.CFrame.LookVector.X * MAX_LENGTH, root.Position.Y, CAMERA.CFrame.LookVector.Z * MAX_LENGTH))
+	end
+	local function EnableShiftlock()
+		UpdateAutoRotate(false)
+		UpdateImage("ON")
+		root.CFrame = GetUpdatedCameraCFrame(root, camera)
+		camera.CFrame = camera.CFrame * ENABLED_OFFSET
+	end
+	local function DisableShiftlock()
+		UpdateAutoRotate(true)
+		UpdateImage("OFF")
+		camera.CFrame = camera.CFrame * DISABLED_OFFSET
+		pcall(function()
+			active:Disconnect()
+			active = nil
+		end)
+	end
+	UpdateImage("OFF")
+	active = false
+	function ShiftLock()
+		if not active then
+			active = runservice.RenderStepped:Connect(function()
+				EnableShiftlock()
+			end)
+		else
+			DisableShiftlock()
+		end
+	end
+	local ShiftLockButton = CAS:BindAction("ShiftLOCK", ShiftLock, false, "On")
+	CAS:SetPosition("ShiftLOCK", UDim2.new(0.8, 0, 0.8, 0))
+	button.MouseButton1Click:Connect(function()
+		if not active then
+			active = runservice.RenderStepped:Connect(function()
+				EnableShiftlock()
+			end)
+		else
+			DisableShiftlock()
+		end
+	end)
+	return MobileCameraFramework
+	
+end
+coroutine.wrap(TLQOYN_fake_script)()
+local function OMQRQRC_fake_script() -- ShiftlockStarterGui.LocalScript 
+	local script = Instance.new('LocalScript', ShiftlockStarterGui)
+
+	local Players = game:GetService("Players")
+	local UserInputService = game:GetService("UserInputService")
+	local Settings = UserSettings()
+	local GameSettings = Settings.GameSettings
+	local ShiftLockController = {}
+	while not Players.LocalPlayer do
+		wait()
+	end
+	local LocalPlayer = Players.LocalPlayer
+	local Mouse = LocalPlayer:GetMouse()
+	local PlayerGui = LocalPlayer:WaitForChild("PlayerGui")
+	local ScreenGui, ShiftLockIcon, InputCn
+	local IsShiftLockMode = true
+	local IsShiftLocked = true
+	local IsActionBound = false
+	local IsInFirstPerson = false
+	ShiftLockController.OnShiftLockToggled = Instance.new("BindableEvent")
+	local function isShiftLockMode()
+		return LocalPlayer.DevEnableMouseLock and GameSettings.ControlMode == Enum.ControlMode.MouseLockSwitch and LocalPlayer.DevComputerMovementMode ~= Enum.DevComputerMovementMode.ClickToMove and GameSettings.ComputerMovementMode ~= Enum.ComputerMovementMode.ClickToMove and LocalPlayer.DevComputerMovementMode ~= Enum.DevComputerMovementMode.Scriptable
+	end
+	if not UserInputService.TouchEnabled then
+		IsShiftLockMode = isShiftLockMode()
+	end
+	local function onShiftLockToggled()
+		IsShiftLocked = not IsShiftLocked
+		ShiftLockController.OnShiftLockToggled:Fire()
+	end
+	local initialize = function()
+		print("enabled")
+	end
+	function ShiftLockController:IsShiftLocked()
+		return IsShiftLockMode and IsShiftLocked
+	end
+	function ShiftLockController:SetIsInFirstPerson(isInFirstPerson)
+		IsInFirstPerson = isInFirstPerson
+	end
+	local function mouseLockSwitchFunc(actionName, inputState, inputObject)
+		if IsShiftLockMode then
+			onShiftLockToggled()
+		end
+	end
+	local function disableShiftLock()
+		if ScreenGui then
+			ScreenGui.Parent = nil
+		end
+		IsShiftLockMode = false
+		Mouse.Icon = ""
+		if InputCn then
+			InputCn:disconnect()
+			InputCn = nil
+		end
+		IsActionBound = false
+		ShiftLockController.OnShiftLockToggled:Fire()
+	end
+	local onShiftInputBegan = function(inputObject, isProcessed)
+		if isProcessed then
+			return
+		end
+		if inputObject.UserInputType ~= Enum.UserInputType.Keyboard or inputObject.KeyCode == Enum.KeyCode.LeftShift or inputObject.KeyCode == Enum.KeyCode.RightShift then
+		end
+	end
+	local function enableShiftLock()
+		IsShiftLockMode = isShiftLockMode()
+		if IsShiftLockMode then
+			if ScreenGui then
+				ScreenGui.Parent = PlayerGui
+			end
+			if IsShiftLocked then
+				ShiftLockController.OnShiftLockToggled:Fire()
+			end
+			if not IsActionBound then
+				InputCn = UserInputService.InputBegan:connect(onShiftInputBegan)
+				IsActionBound = true
+			end
+		end
+	end
+	GameSettings.Changed:connect(function(property)
+		if property == "ControlMode" then
+			if GameSettings.ControlMode == Enum.ControlMode.MouseLockSwitch then
+				enableShiftLock()
+			else
+				disableShiftLock()
+			end
+		elseif property == "ComputerMovementMode" then
+			if GameSettings.ComputerMovementMode == Enum.ComputerMovementMode.ClickToMove then
+				disableShiftLock()
+			else
+				enableShiftLock()
+			end
+		end
+	end)
+	LocalPlayer.Changed:connect(function(property)
+		if property == "DevEnableMouseLock" then
+			if LocalPlayer.DevEnableMouseLock then
+				enableShiftLock()
+			else
+				disableShiftLock()
+			end
+		elseif property == "DevComputerMovementMode" then
+			if LocalPlayer.DevComputerMovementMode == Enum.DevComputerMovementMode.ClickToMove or LocalPlayer.DevComputerMovementMode == Enum.DevComputerMovementMode.Scriptable then
+				disableShiftLock()
+			else
+				enableShiftLock()
+			end
+		end
+	end)
+	LocalPlayer.CharacterAdded:connect(function(character)
+		if not UserInputService.TouchEnabled then
+			initialize()
+		end
+	end)
+	if not UserInputService.TouchEnabled then
+		initialize()
+		if isShiftLockMode() then
+			InputCn = UserInputService.InputBegan:connect(onShiftInputBegan)
+			IsActionBound = true
+		end
+	end
+	enableShiftLock()
+	return ShiftLockController
+	
+end
+coroutine.wrap(OMQRQRC_fake_script)()
+end)
+
+
+--CREDITS WOOHOO!
+local Tab = Window:NewTab("Credits")
+local Section = Tab:NewSection("Made by underRosta!")
+local Section = Tab:NewSection("My roblox username - RostaMixNeFeik")
+local Section = Tab:NewSection("First BetaTester - games gaming, 15andrei224")
+local Section = Tab:NewSection("My Channel Link")
+local Section = Tab:NewSection("https://youtube.com/@underrosta4618")
